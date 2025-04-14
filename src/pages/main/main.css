@@ -1,0 +1,144 @@
+/* Make the form full-screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+  }
+  
+  .event-form {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 10rem 3rem;
+    box-sizing: border-box;
+    background: #f8f9fa;
+
+  }
+  
+  .section-title {
+    color: red;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subsection-title {
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    display: inline-block;
+    margin: 1.2rem 0 0.5rem 0;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  #email{
+    width: 30%;
+  }
+  .form-group {
+    position: relative;
+    flex: 1 1 calc(25% - 2rem); /* Fits 4 per row with spacing */
+    min-width: 240px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 1.2rem 0.75rem 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    background: transparent;
+    font-size: 1rem;
+    appearance: none;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 1.2rem;
+    left: 0.75rem;
+    color: #777;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    padding: 0 5px;
+  }
+  
+  /* Floating label for input */
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label {
+    top: -0.6rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #000;
+    background-color: #f8f9fa;
+  }
+  
+  /* Floating label for select */
+  .form-group select:focus + label,
+  .form-group select:valid + label {
+    top: -0.6rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #000;
+    background-color: #f8f9fa;
+  }
+  
+  /* Transparent placeholder for select until selection */
+  .form-group select:required:invalid {
+    color: transparent;
+  }
+  
+  /* Option text visible */
+  .form-group select option {
+    color: black;
+  }
+  
+  /* Animate border on focus */
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+  }
+  
+  /* Submit button */
+  .submit-btn {
+    padding: 0.75rem 1.8rem;
+    font-size: 1rem;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    position: relative;
+    left: 90%;
+  }
+  
+  .submit-btn:hover {
+    background: #555;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .form-group {
+      flex: 1 1 calc(50% - 2rem); /* 2 per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .form-group {
+      flex: 1 1 100%; /* Full width on small screens */
+    }
+  
+    .event-form {
+      padding: 1rem;
+    }
+  }
+  

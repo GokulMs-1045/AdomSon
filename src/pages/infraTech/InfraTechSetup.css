@@ -1,0 +1,111 @@
+.infra-container {
+    padding: 24px;
+    font-size: 14px;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin-top: 120px;
+    margin-left: -200px;
+  }
+  
+  .section-title1 {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: -650px;
+  }
+  
+  .section-header {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 300px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }  
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  select,
+  input[type="text"] {
+    margin-top: 4px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .floating-label,.floating-label1 {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .floating-label input {
+    width: 370%;
+    padding: 14px 12px 6px;
+    font-size: 16px;
+    border: 1px solid #5792d9;
+    border-radius: 4px;
+    background: none;
+  }
+
+  .floating-label1 input {
+    width: 170%;
+    padding: 14px 12px 6px;
+    font-size: 16px;
+    border: 1px solid #5792d9;
+    border-radius: 4px;
+    background: none;
+  }
+  
+  .floating-label select {
+    width: 178%;
+    padding: 14px 12px 6px;
+    font-size: 16px;
+    border: 1px solid #5792d9;
+    border-radius: 4px;
+    background: none;
+  }
+  
+  .floating-label label,
+  .floating-label1 label {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    color: #6d6d6d;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background-color: white;
+    padding: 0 4px;
+  }
+  
+  .floating-label input:focus + label,
+  .floating-label1 input:focus + label,
+  /* .floating-label input:not(:placeholder-shown) + label, */
+  .floating-label select:focus + label,
+  .floating-label1 select:focus + label,
+  .floating-label select:valid + label,
+  .floating-label1 select:valid + label {
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #333;
+  }
+  

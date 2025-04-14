@@ -1,0 +1,76 @@
+.financial-planning {
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 1200px;
+    margin: auto;
+    margin-top: 80px;
+  }
+
+  .financial-planning h1{
+    color: #000000;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+  
+  .financial-planning h2 {
+    color: #000000;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .financial-planning table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+
+  .financial-planning th,
+  .financial-planning td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  
+  .financial-planning th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+  }
+  
+  .financial-planning input[type="number"],
+  .financial-planning input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .total-row td {
+    font-weight: bold;
+    background-color: #f1f1f1;
+  }
+  
+  .submit-button-container {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .submit-button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #5d98c9;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-button-container button:hover {
+    background-color: #4c85b3;
+  }
+  

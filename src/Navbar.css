@@ -1,0 +1,74 @@
+.navbar {
+  width: 98%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #575757;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f0eaea;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  height: 60px;
+}
+
+.navbar-left .logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-option {
+  background-color: transparent;
+  border: none;
+  color: #f0eaea;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-option:hover {
+  background-color: #7a7171;
+  transform: scale(1.05);
+}
+
+.nav-option.selected {
+  background-color: #a49c9c;
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 40px;
+}
+
+.user-icon {
+  font-size: 22px;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+}
