@@ -17,7 +17,7 @@ function App() {
     <div style={{
       width: '100%',
       minHeight: '100vh',
-      background: '#f0f2f5',
+      background: 'white',
       margin: 0,
       padding: 0,
       overflowX: 'hidden',

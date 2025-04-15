@@ -2,9 +2,14 @@ import React from 'react';
 import './InfraTechSetup.css';
 
 export default function InfraTechSetup() {
+  const handleSave = () => {
+    // Placeholder for future save logic
+    alert("Form saved successfully!");
+  };
+
   return (
     <div className="infra-container">
-      <h2 className="section-title1">Infra & Technical Setup </h2>
+      <h2 className="section-title1">Infra & Technical Setup</h2>
 
       <div>
         <h3 className="section-header">Audio-Visual Setup</h3>
@@ -121,6 +126,8 @@ export default function InfraTechSetup() {
           </div>
         </div>
       </div>
+
+      <button className="save-btn" onClick={handleSave}>Save</button>
     </div>
   );
 }

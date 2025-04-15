@@ -10,12 +10,14 @@ body, html {
   
   .event-form {
     width: 100vw;
-    height: 100vh;
+    height: 80;
     overflow-y: auto;
     padding: 10rem 3rem;
     box-sizing: border-box;
-    background: #f8f9fa;
-
+    background: #fafafa;
+    position: relative;
+    right: 30%;
+    margin-left: 0;
   }
   
   .section-title {
@@ -118,7 +120,7 @@ body, html {
     cursor: pointer;
     transition: background 0.2s ease;
     position: relative;
-    left: 90%;
+    left: 30%;
   }
   
   .submit-btn:hover {

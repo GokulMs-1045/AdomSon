@@ -115,7 +115,6 @@ const Others = () => {
 
       <div className="others-container">
         <div className="table-section">
-          <h2 className="ot-title">EVENT CHECKLIST</h2>
           <table className="checklist-table">
             <thead>
               <tr>

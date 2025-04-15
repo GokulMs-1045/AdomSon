@@ -145,8 +145,6 @@ const Agenda = () => {
 
   return (
     <div className="agenda-container">
-      <h2 className="section-title">Agenda (Section)</h2>
-
         <label>Objectives of the Event (in 200 words):</label>
       <div className="form-group">
         <textarea
@@ -172,8 +170,9 @@ const Agenda = () => {
         <label>
           Proposed Event - Brochure / Poster (Only in PDF under 2MB):
         </label>
-      <div className="form-group inline-label">
+      <div className="form-group inline-label choosefile">
         <input
+        className="choosefile"
           type="file"
           accept="application/pdf"
           onChange={handleBrochureUpload}
@@ -240,14 +239,14 @@ const Agenda = () => {
               }
               placeholder="Topic"
             />
-            <input
+            <input className="speaker"
               value={newSession.speaker}
               onChange={(e) =>
                 setNewSession({ ...newSession, speaker: e.target.value })
               }
               placeholder="Speaker"
             />
-            <button type="submit" className="view-btn eighth-btn">
+            <button type="submit" className="view-btn eighth-btn save">
               {editingId ? "Save Edit" : "Save"}
             </button>
           </div>

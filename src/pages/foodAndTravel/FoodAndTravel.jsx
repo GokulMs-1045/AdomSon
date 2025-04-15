@@ -187,7 +187,8 @@ const FoodTravelForm = () => {
             }, [])}
           </tbody>
         </table> */}
-
+        <div className=".table-container">
+        <div className="food-table">
         <table className="food-table">
           <thead>
             <tr>
@@ -538,6 +539,8 @@ const FoodTravelForm = () => {
             ))}
           </tbody>
         </table>
+        </div>
+        </div>
         <div className="Buttons">
         <button className="T-submit-btn" onClick={handleSubmit}>
                   Submit
