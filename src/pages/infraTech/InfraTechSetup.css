@@ -3,7 +3,7 @@
   font-size: 14px;
   color: black;
   font-family: Arial, sans-serif;
-  margin-top: 80px;
+  margin-top: 170px;
   margin-right: 60px;
   width: 100%;
   box-sizing: border-box;
@@ -28,7 +28,7 @@
   cursor: pointer;
   transition: background 0.3s ease;
   position: relative;
-  left: 90%;
+  left: 94%;
 }
 
 .save-btn:hover {
@@ -67,7 +67,7 @@ label {
   min-width: 280px;
 }
 
-select,
+/* select,
 input[type="text"] {
   margin-top: 4px;
   padding: 10px;
@@ -76,7 +76,7 @@ input[type="text"] {
   border-radius: 4px;
   font-size: 14px;
   box-sizing: border-box;
-}
+} */
 
 .floating-label,
 .floating-label1 {

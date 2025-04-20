@@ -1,0 +1,371 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow-y: auto;
+}
+
+  .filter-container {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 30px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px;
+    margin-top: 10%;
+    border: 1px solid black;
+    margin-left: -3%;
+    font-size: 14px;
+  }
+  .sub-options {
+    transition: all 0.3s ease;
+  }
+  
+  
+  .checkbox-item label span {
+    font-weight: bold;
+    transition: transform 0.2s ease;
+  }
+  
+  
+  .info-text {
+    font-style: italic;
+    color: #424242;
+    margin-bottom: 25px;
+  }
+  
+  .column-title {
+    font-weight: bold;
+    margin-bottom:10%;
+    margin-top: 0%;
+  }
+  
+  .checkbox-list {
+    margin-bottom: 20px;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  
+  .checkbox-item input {
+    margin-right: 8px;
+    margin-top: 3px;
+  }
+  
+  .white-text {
+    color: rgb(103, 103, 103);
+  }
+  
+  .red-text {
+    color: #ff4d4d;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-item.small label {
+    font-size: 12px;
+  }
+  
+  .link-text {
+    color: #2bd9d9;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .link-text:hover {
+    text-decoration: underline;
+  }
+  .checkbox-item.sub {
+    margin-left: 30px;
+  }
+  .checkbox-item.vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30px; /* to push input to left */
+    margin-top: 5px;
+  }
+  
+  .checkbox-item.vertical label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .checkbox-item.vertical input[type="text"] {
+    width: 200px;
+    padding: 6px;
+    font-size: 14px;
+  }
+  
+  
+  .checkbox-item input[type="checkbox"] {
+    margin-right: 8px;
+    margin-top: 3px;
+  }
+
+  .checkbox-item.vertical input[type="date"] {
+    padding: 6px;
+    font-size: 14px;
+  }
+  .checkbox-item.vertical label {
+    font-weight: bold;
+  }
+  
+
+ 
+ 
+   
+  .event-cards-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 10px;
+    margin-left: -40px;
+    width: auto;
+    align-content: start;
+    
+    /* background-color: #2bd9d9; */
+    
+  }
+  /* Individual card styling */
+  .event-card {
+    min-width: 320px; /* Minimum card width */
+    padding:20px;
+    border-radius: 12px;
+    background-color: white;
+   
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+.event-card {
+  transform: translateY(180px);
+  width: calc(33.33% - 20px); /* 3 cards per row */
+  min-width: 260px;
+  padding: 20px;
+  flex: 10;
+ 
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.btn-group {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between; /* space them out evenly */
+  gap: 10px;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.accept,
+.reject{
+  flex: 1; /* makes all buttons equal width */
+  padding: 8px 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  transition: 0.3s;
+  text-align: center;
+  width: 150px;
+}
+
+.download {
+  flex: 1; /* makes all buttons equal width */
+  padding: 8px 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #eee;
+  transition: 0.3s;
+  text-align: center;
+  
+  width: 30px;
+}
+
+
+.accept:hover {
+  background-color: #c8f7c5;
+}
+
+.reject:hover {
+  background-color: #f8c6c6;
+}
+
+.download:hover {
+  background-color: #d3eafd;
+}
+
+.view-details {
+  /* transform: translateY(-550px); */
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  cursor: pointer;
+  margin-left: 200px;
+  margin-top: 30px;
+}
+/* Add these styles to your existing CSS */
+.event-card h4{
+  margin-bottom: 90px;
+}
+/* Main container */
+.main-container {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Event cards grid - 3 columns with fixed height */
+.event-cards-container {
+  flex: 1;
+  display: grid;
+  position:relative;
+  grid-template-columns: repeat(2, minmax(400px, 1fr));
+  gap: 0px;
+  row-gap: 70px;
+  padding: 10px;
+  margin-left: 00px;
+  grid-auto-rows: 350px; /* Fixed row height */
+}
+
+/* Individual card styling with fixed height */
+.event-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%; /* Takes full height of grid cell */
+  overflow-y: hidden; /* Prevents content from overflowing */
+}
+.enrnt-card-con{
+  align-items: left ;
+  
+}
+
+/* Content styling with scrollable area */
+.card-content {
+  flex: 1;
+  overflow-y: auto; /* Allows scrolling if content exceeds height */
+  padding-right: 5px; /* Prevents scrollbar from hiding content */
+}
+.event-card h4 {
+  margin-bottom: 30px; /* Add space below the title */
+  font-size: 1.2rem;
+}
+
+.event-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Button group at bottom */
+.btn-group {
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+
+
+.top-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 70px;
+
+  top: -50%;
+  left: 120%;
+  
+}
+
+.download-buttons {
+  display: flex;
+  gap: 75px;
+  width: 00px;
+  font-weight: bold;
+  position: fixed;
+}
+
+.download-buttons {
+  display: flex;
+  /* top: 360px; 
+  right:200px; */
+  top: 50%;
+  align-items: center;
+  gap: 80px;
+  width: 700px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: bold;
+  position: fixed;
+  font-weight: bold;
+  /* color: white; */
+  transform: translateX(50px);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.download-btn-pdf {
+  /* position: fixed; */
+  font-weight: bold;
+  background-color: #ffa4a2;
+  width: 300px;
+  height: 100px;
+  border-radius: 25px;
+  font-size: 18px;
+  box-shadow: #424242;
+
+}
+
+.download-btn-excel {
+  background-color: #c9ffcb;
+  font-weight: bold;
+  font-size: 18px;
+  /* position: fixed; */
+  width: 300px;
+  height: 100px;
+  border-radius: 25px;
+}
+
+.download-button:hover {
+  opacity: 0.9;
+}
+
+.download-btn i {
+  font-size: 16px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .event-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .event-cards-container {
+    grid-template-columns: 1fr;
+  }
+}

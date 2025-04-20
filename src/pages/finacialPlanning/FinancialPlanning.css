@@ -1,14 +1,14 @@
 .financial-planning {
   padding: 30px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 100vw;
+  width: 90vw;
   margin: 0;
   margin-top: 80px;
   box-sizing: border-box;
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;
+  margin-left: -685px;
   margin-right: -50vw;
   background-color: #fff; /* Optional: background to differentiate section */
 }

@@ -24,13 +24,14 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  font-size: 29px;
 }
 
 .nav-option {
   background-color: transparent;
   border: none;
   color: #f0eaea;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   padding: 10px 12px;
   border-radius: 10px;

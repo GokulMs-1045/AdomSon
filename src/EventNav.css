@@ -21,6 +21,7 @@ body{
   }
   
   .event-nav-item {
+    text-decoration: none;
     display: flex;
     align-items: center;
     gap: 10px;

@@ -5,6 +5,8 @@ const EventForm = () => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [numDays, setNumDays] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
 
   const handleDateChange = (start, end) => {
     if (start && end) {
@@ -23,8 +25,15 @@ const EventForm = () => {
         <div className="form-group">
           <select id="institution" required defaultValue="">
             <option value="" disabled hidden></option>
-            <option value="Institution A">Institution A</option>
-            <option value="Institution B">Institution B</option>
+            <option value="SSEI">SSEI</option>
+            <option value="Engg & Tech">Engg & Tech</option>
+            <option value="Phamacy">Phamacy</option>
+            <option value="AHS">AHS</option>
+            <option value="Aakam">Aakam</option>
+            <option value="Nursing">Nursing</option>
+            <option value="HI">HI</option>
+            <option value="Others">Others</option>
+
           </select>
           <label htmlFor="institution">Event Organizing Institution</label>
         </div>
@@ -33,8 +42,13 @@ const EventForm = () => {
           <select id="organizingDept" required defaultValue="">
             <option value="" disabled hidden></option>
             <option value="CSE">CSE</option>
-            <option value="ECE">ECE</option>
-            <option value="EEE">EEE</option>
+            <option value="IT">IT</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="Cyber">Cyber</option>
+            <option value="Mech">Mech</option>
+            <option value="Agri">Agri</option>
+            <option value="SNH">SNH</option>
+
           </select>
           <label htmlFor="organizingDept">Organizing Dept.</label>
         </div>
@@ -42,9 +56,14 @@ const EventForm = () => {
         <div className="form-group">
           <select id="nature" required defaultValue="">
             <option value="" disabled hidden></option>
-            <option value="Workshop">Workshop</option>
             <option value="Seminar">Seminar</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Guest Lecture">Guest Lecture</option>
             <option value="Conference">Conference</option>
+            <option value="Symposium">Symposium</option>
+            <option value="FDP">FDP</option>
+            <option value="Others">Others</option>
+
           </select>
           <label htmlFor="nature">Nature of the Event</label>
         </div>
@@ -69,9 +88,13 @@ const EventForm = () => {
         <div className="form-group">
           <select id="scope" required defaultValue="">
             <option value="" disabled hidden></option>
-            <option value="Internal">Internal</option>
+            <option value="Department">Department</option>
+            <option value="Institution">Institution</option>
+            <option value="State">State</option>
+            <option value="Regional">Regional</option>
             <option value="National">National</option>
             <option value="International">International</option>
+
           </select>
           <label htmlFor="scope">Scope of the Event</label>
         </div>
@@ -79,8 +102,8 @@ const EventForm = () => {
         <div className="form-group">
           <select id="funding" required defaultValue="">
             <option value="" disabled hidden></option>
-            <option value="Institute">Institute</option>
-            <option value="External Agency">External Agency</option>
+            <option value="Management">Management</option>
+            <option value="Funding Agency">Funding Agency</option>
           </select>
           <label htmlFor="funding">Funding Source</label>
         </div>
@@ -130,6 +153,34 @@ const EventForm = () => {
       </div>
 
       {/* Row 4 */}
+        <div className="form-row">
+          <div className="form-group">
+            <input
+              id="startTime"
+              type="time"
+              value={startTime}
+              onChange={(e) => setStartTime(e.target.value)}
+              required
+              placeholder=" "
+            />
+            <label htmlFor="startTime">Start Time</label>
+          </div>
+
+          <div className="form-group">
+            <input
+              id="endTime"
+              type="time"
+              value={endTime}
+              onChange={(e) => setEndTime(e.target.value)}
+              required
+              placeholder=" "
+            />
+            <label htmlFor="endTime">End Time</label>
+          </div>
+        </div>
+
+
+      {/* Row 5 */}
       <div className="form-row">
         <div className="form-group">
           <select id="venue" required defaultValue="">
@@ -177,7 +228,7 @@ const EventForm = () => {
         </div>
         <div className="form-group">
           <input id="affiliatedOrg" required placeholder=" " />
-          <label htmlFor="affiliatedOrg">Affiliated Institution / Organization</label>
+          <label htmlFor="affiliatedOrg">Affiliated / Organization</label>
         </div>
         <div className="form-group">
           <input id="contactNumber" required placeholder=" " />
@@ -189,6 +240,7 @@ const EventForm = () => {
         </div>
       </div>
 
+      <hr />
       {/* Participant Details */}
       <h3 className="subsection-title">Participant Details</h3>
       <div className="form-row">
@@ -205,7 +257,7 @@ const EventForm = () => {
           <label htmlFor="totalAttendees">Total Expected Attendees</label>
         </div>
       </div>
-      <hr />
+  
       <br />
 
       {/* Guest & Logistics */}
@@ -237,7 +289,7 @@ const EventForm = () => {
       </div>
 
       <div className="form-row">
-        <button type="submit" className="submit-btn">Save</button>
+        <button type="submit" className="eventinfo-submit-btn">Save</button>
       </div>
     </form>
   );

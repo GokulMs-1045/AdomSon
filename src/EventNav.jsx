@@ -13,7 +13,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const EventNav = () => {
   const navItems = [
-    { 
+    {
       id: 'eventProposal', 
       label: 'Event Info', 
       icon: <FaCalendarAlt />,

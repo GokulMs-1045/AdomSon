@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { FaUserCircle } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const [selected, setSelected] = useState('create'); // default selected
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Get initial tab based on URL path or localStorage
+  const getInitialTab = () => {
+    const path = location.pathname;
+    if (path === '/FilterEvents') return 'generation';
+    if (path === '/') return 'create';
+    return localStorage.getItem('selectedTab') || 'create';
+  };
+
+  const [selected, setSelected] = useState(getInitialTab());
+
+  useEffect(() => {
+    localStorage.setItem('selectedTab', selected);
+  }, [selected]);
 
   return (
     <nav className="navbar">
@@ -14,19 +30,30 @@ const Navbar = () => {
       <div className="navbar-center">
         <button
           className={`nav-option ${selected === 'create' ? 'selected' : ''}`}
-          onClick={() => setSelected('create')}
+          onClick={() => {
+            setSelected('create');
+            navigate('/');
+          }}
         >
           Create Event
         </button>
+
         <span
           className={`nav-option ${selected === 'generation' ? 'selected' : ''}`}
-          onClick={() => setSelected('generation')}
+          onClick={() => {
+            setSelected('generation');
+            navigate('/FilterEvents');
+          }}
         >
           Report Generation
         </span>
+
         <span
           className={`nav-option ${selected === 'report' ? 'selected' : ''}`}
-          onClick={() => setSelected('report')}
+          onClick={() => {
+            setSelected('report');
+            // navigate('/some-report-path');
+          }}
         >
           Report
         </span>
@@ -35,7 +62,7 @@ const Navbar = () => {
       <div className="navbar-right">
         <FaUserCircle className="user-icon" />
         <span className="username">
-          Tom <span className="dropdown-arrow">▼</span>
+          Mr.K <span className="dropdown-arrow">▼</span>
         </span>
       </div>
     </nav>

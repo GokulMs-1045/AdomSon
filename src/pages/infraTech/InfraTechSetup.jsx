@@ -51,7 +51,7 @@ export default function InfraTechSetup() {
             <label>Number of AC Units</label>
           </div>
         </div>
-        <div className="form-group">
+        <div className="form-group1">
           <div className="floating-label">
             <input type="text" required />
             <label>Additional Ventilation</label>
@@ -79,7 +79,7 @@ export default function InfraTechSetup() {
             <label>Whiteboard</label>
           </div>
         </div>
-        <div className="form-group">
+        <div className="form-group1">
           <div className="floating-label">
             <input type="text" required />
             <label>Additional Writing Materials</label>
