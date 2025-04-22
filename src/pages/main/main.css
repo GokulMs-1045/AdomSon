@@ -1,6 +1,6 @@
 /* Make the form full-screen */
 body, html {
-  margin: 0;
+  margin:   0px;
   padding: 0;
   height: 100%;
   width: 100%;
@@ -16,17 +16,14 @@ body, html {
   box-sizing: border-box;
   background: #ffffff;
   position: relative;
-  left: -7%;
-  /* right: 30%; */
-  margin-left: 0;
+  left: -8%;
 
 }
 
-.section-title {
-  color: rgb(0, 0, 0);
-  font-size: 1.4rem;
+.event-section-title {
+  color: #007bff;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  background-color: white;
 }
 
 .subsection-title {
@@ -51,9 +48,19 @@ body, html {
   min-width: 240px;
 }
 
-.form-group input,
-.form-group select {
+.form-group input{
   width: 100%;
+  padding: 1.2rem 0.75rem 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  appearance: none;
+}
+
+.form-group select {
+  width: 107%;
   padding: 1.2rem 0.75rem 0.4rem;
   border: 1px solid #ccc;
   border-radius: 6px;
