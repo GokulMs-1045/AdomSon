@@ -3,7 +3,7 @@
   padding: 20px;
   font-family: 'Segoe UI', sans-serif;
   width: 95vw;
- 
+ margin-top: -5%;
   margin-left: -12%;
 }
 
@@ -139,13 +139,13 @@
   background-color: #3e8e41;
 }
 
-.submit-btn {
+.submit-btn-fa {
   padding: 15px 20px;
-  background: #8f8b8b;
+  background: #766df4;
   margin-bottom: 50px;
   color: white;
   border: none;
-  margin-left: 1350px;
+  margin-left: 75%;
   position: relative;
   left: 20%;
   border-radius: 5px;
@@ -167,9 +167,15 @@
 }
 
 /* Submit Container */
-.submit-container {
+.submit-container button{
   text-align: right;
-  margin-top: 30px;
+  margin-top: -300px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #5d98c9;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 /* Responsive Adjustments */
