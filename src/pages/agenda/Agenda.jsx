@@ -145,6 +145,7 @@ const Agenda = () => {
 
   return (
     <div className="agenda-container">
+    <h2 className="obj-title">Objective of the event</h2>
         <label>Objectives of the Event (in 200 words):</label>
       <div className="form-group">
         <textarea
@@ -179,9 +180,10 @@ const Agenda = () => {
         />
         {brochure && <button className="view-btn">View</button>}
       </div>
+      <hr></hr>
 
       <div className="session-details">
-        <h3>Technical Session Details:</h3>
+        <h3 className="tech-tit">Technical Session Details</h3>
         <div className="session-count">
           <label>No. of Sessions:</label>
           <input
@@ -247,7 +249,7 @@ const Agenda = () => {
               placeholder="Speaker"
             />
             <button type="submit" className="view-btn eighth-btn save">
-              {editingId ? "Save Edit" : "Save"}
+              {editingId ? "Save Edit" : "Add"}
             </button>
           </div>
         </form>
@@ -255,11 +257,12 @@ const Agenda = () => {
           <thead>
             <tr>
               <th>S.No.</th>
-              <th>Date</th>
-              <th>Time Slot</th>
+              <th style={{ width: '100px' }} >Date</th>
+              
+              <th style={{ width: '100px' }}>Time Slot</th>
               <th>Session Title / Topic</th>
               <th>Name of the Speaker</th>
-              <th>Action</th>
+              <th style={{ width: '350px' }}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -303,6 +306,9 @@ const Agenda = () => {
             ))}
           </tbody>
         </table>
+        <button type="submit" className="view-btn-save">
+              {editingId ? "Save Edit" : "Submit"}
+            </button>
       </div>
     </div>
   );
