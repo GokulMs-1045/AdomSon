@@ -1,5 +1,5 @@
 .agenda-container {
-    width: 100vw;
+    width: 90vw;
     margin: 0; /* Reset margin to ensure edge-to-edge */
     margin-top: 150px;
     padding: 20px;
@@ -8,10 +8,19 @@
     font-family: Arial, sans-serif;
     overflow-x: hidden;
     position: relative;
-    left: 50%;
+    left:55%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
+  }
+
+
+
+  .obj-title {
+    font-weight: bold;
+    color: #113861;
+    margin-bottom:3%;
+    margin-top: 0%;
   }
   
   .section-title {
@@ -91,6 +100,12 @@
     background-color: #c82333;
   }
   
+  .tech-tit{
+    position: relative;
+    margin-top: 50px;
+    bottom: 20px;
+    color: #51a5ff;
+  }
   .eighth-btn {
     
     padding: 5px 5px;
@@ -108,6 +123,7 @@
   border-radius: 4px;
   cursor: pointer;
   padding: 4px 8px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
