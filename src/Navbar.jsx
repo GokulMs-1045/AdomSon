@@ -24,7 +24,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <span className="logo">Logo</span>
+      <img src="/logo.png" alt="Logo" className="logo" />
+
       </div>
 
       <div className="navbar-center">
@@ -42,7 +43,7 @@ const Navbar = () => {
           className={`nav-option ${selected === 'generation' ? 'selected' : ''}`}
           onClick={() => {
             setSelected('generation');
-            navigate('/FilterEvents');
+            //navigate('/FilterEvents');
           }}
         >
           Report Generation
@@ -52,7 +53,7 @@ const Navbar = () => {
           className={`nav-option ${selected === 'report' ? 'selected' : ''}`}
           onClick={() => {
             setSelected('report');
-            // navigate('/some-report-path');
+            navigate('/FilterEvents');
           }}
         >
           Report
