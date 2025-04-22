@@ -5,71 +5,74 @@ import "./Foodandtravel.css";
 
 const FoodTravelForm = () => {
   // Days state
-  const [days, setDays] = useState('');
+  const [days, setDays] = useState("");
 
   // Refreshment states
   const [refreshmentEntries, setRefreshmentEntries] = useState([]);
   const [refreshmentForm, setRefreshmentForm] = useState({
-    date: '',
-    time: '',
-    session: 'Forenoon',
-    category: 'Guest',
-    items: 'Only Tea/Coffee',
-    count: '',
-    servedAt: 'Venue',
-    note: ''
+    date: "",
+    time: "",
+    session: "Forenoon",
+    category: "Guest",
+    items: "Only Tea/Coffee",
+    count: "",
+    servedAt: "Venue",
+    note: "",
   });
 
   // Food states
   const [foodEntries, setFoodEntries] = useState([]);
   const [foodForm, setFoodForm] = useState({
-    date: '',
-    time: '',
-    mealType: 'Breakfast',
-    category: 'Guest',
-    menu: 'Standard',
-    count: '',
-    servedAt: 'Dining Hall',
-    note: ''
+    date: "",
+    time: "",
+    mealType: "Breakfast",
+    category: "Guest",
+    menu: "Standard",
+    count: "",
+    servedAt: "Dining Hall",
+    note: "",
   });
 
   // Travel states
   const [travelEntries, setTravelEntries] = useState([]);
   const [travelForm, setTravelForm] = useState({
-    category: 'Guest',
-    mode: 'Car',
-    date: '',
-    time: '',
-    pickup: '',
-    drop: '',
-    remarks: ''
+    category: "Guest",
+    mode: "Car",
+    date: "",
+    time: "",
+    pickup: "",
+    drop: "",
+    remarks: "",
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/get_days')
-      .then(response => response.json())
-      .then(data => setDays(data.days))
-      .catch(error => console.error("Error fetching data:", error));
+    fetch("http://localhost:5000/get_days")
+      .then((response) => response.json())
+      .then((data) => setDays(data.days))
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   // Refreshment handlers
   const handleRefreshmentInputChange = (e) => {
     const { name, value } = e.target;
-    setRefreshmentForm(prev => ({ ...prev, [name]: value }));
+    setRefreshmentForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const addRefreshmentEntry = () => {
     if (refreshmentForm.date && refreshmentForm.time && refreshmentForm.count) {
-      setRefreshmentEntries(prev => [...prev, { ...refreshmentForm, id: Date.now() }]);
+      setRefreshmentEntries((prev) => [
+        ...prev,
+        { ...refreshmentForm, id: Date.now() },
+      ]);
       setRefreshmentForm({
-        date: '',
-        time: '',
-        session: 'Forenoon',
-        category: 'Guest',
-        items: 'Only Tea/Coffee',
-        count: '',
-        servedAt: 'Venue',
-        note: ''
+        date: "",
+        time: "",
+        session: "Forenoon",
+        category: "Guest",
+        items: "Only Tea/Coffee",
+        count: "",
+        servedAt: "Venue",
+        note: "",
       });
     }
   };
@@ -77,21 +80,21 @@ const FoodTravelForm = () => {
   // Food handlers
   const handleFoodInputChange = (e) => {
     const { name, value } = e.target;
-    setFoodForm(prev => ({ ...prev, [name]: value }));
+    setFoodForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const addFoodEntry = () => {
     if (foodForm.date && foodForm.time && foodForm.count) {
-      setFoodEntries(prev => [...prev, { ...foodForm, id: Date.now() }]);
+      setFoodEntries((prev) => [...prev, { ...foodForm, id: Date.now() }]);
       setFoodForm({
-        date: '',
-        time: '',
-        mealType: 'Breakfast',
-        category: 'Guest',
-        menu: 'Standard',
-        count: '',
-        servedAt: 'Dining Hall',
-        note: ''
+        date: "",
+        time: "",
+        mealType: "Breakfast",
+        category: "Guest",
+        menu: "Standard",
+        count: "",
+        servedAt: "Dining Hall",
+        note: "",
       });
     }
   };
@@ -99,20 +102,25 @@ const FoodTravelForm = () => {
   // Travel handlers
   const handleTravelInputChange = (e) => {
     const { name, value } = e.target;
-    setTravelForm(prev => ({ ...prev, [name]: value }));
+    setTravelForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const addTravelEntry = () => {
-    if (travelForm.date && travelForm.time && travelForm.pickup && travelForm.drop) {
-      setTravelEntries(prev => [...prev, { ...travelForm, id: Date.now() }]);
+    if (
+      travelForm.date &&
+      travelForm.time &&
+      travelForm.pickup &&
+      travelForm.drop
+    ) {
+      setTravelEntries((prev) => [...prev, { ...travelForm, id: Date.now() }]);
       setTravelForm({
-        category: 'Guest',
-        mode: 'Car',
-        date: '',
-        time: '',
-        pickup: '',
-        drop: '',
-        remarks: ''
+        category: "Guest",
+        mode: "Car",
+        date: "",
+        time: "",
+        pickup: "",
+        drop: "",
+        remarks: "",
       });
     }
   };
@@ -122,12 +130,12 @@ const FoodTravelForm = () => {
       const response = await fetch("http://your-backend-url/api/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           days,
           refreshments: refreshmentEntries,
           meals: foodEntries,
-          travel: travelEntries
-        })
+          travel: travelEntries,
+        }),
       });
       alert(response.ok ? "Submitted successfully!" : "Submission failed!");
     } catch (error) {
@@ -144,8 +152,8 @@ const FoodTravelForm = () => {
     }, {});
   };
 
-  const groupedRefreshments = groupEntries(refreshmentEntries, 'session');
-  const groupedFood = groupEntries(foodEntries, 'mealType');
+  const groupedRefreshments = groupEntries(refreshmentEntries, "session");
+  const groupedFood = groupEntries(foodEntries, "mealType");
 
   return (
     <>
@@ -153,10 +161,10 @@ const FoodTravelForm = () => {
         <Navbar />
         <EventNav />
       </div>
-      
+
       <div className="food-travel-container">
         <h3>Food and Travel Arrangements</h3>
-        
+
         {/* Days Input */}
         <div className="days-input">
           <div className="floating-input">
@@ -173,12 +181,11 @@ const FoodTravelForm = () => {
         </div>
 
         {/* Refreshment Section */}
-        
 
         {/* Food Section */}
         <div className="section-container">
           <h3>Meal Arrangements</h3>
-          
+
           {/* Food Input Form */}
           <div className="input-table-container">
             <table className="input-table">
@@ -198,23 +205,23 @@ const FoodTravelForm = () => {
               <tbody>
                 <tr>
                   <td>
-                    <input 
-                      type="date" 
+                    <input
+                      type="date"
                       name="date"
                       value={foodForm.date}
                       onChange={handleFoodInputChange}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="time" 
+                    <input
+                      type="time"
                       name="time"
                       value={foodForm.time}
                       onChange={handleFoodInputChange}
                     />
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="mealType"
                       value={foodForm.mealType}
                       onChange={handleFoodInputChange}
@@ -225,7 +232,7 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="category"
                       value={foodForm.category}
                       onChange={handleFoodInputChange}
@@ -247,8 +254,8 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <input 
-                      type="number" 
+                    <input
+                      type="number"
                       placeholder="Count"
                       name="count"
                       value={foodForm.count}
@@ -256,7 +263,7 @@ const FoodTravelForm = () => {
                     />
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="servedAt"
                       value={foodForm.servedAt}
                       onChange={handleFoodInputChange}
@@ -266,8 +273,8 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="Note"
                       name="note"
                       value={foodForm.note}
@@ -285,120 +292,132 @@ const FoodTravelForm = () => {
           </div>
 
           {/* Food Schedule Display */}
-<h4>Meal Schedule</h4>
-<div className="schedule-container">
-  <table className="schedule-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th colSpan="6">Breakfast</th>
-        <th colSpan="6">Lunch</th>
-        <th colSpan="6">Dinner</th>
-      </tr>
-      <tr>
-        <th>Date</th>
-        {/* Breakfast columns */}
-        <th>Time</th>
-        <th>Category</th>
-        <th>Menu</th>
-        <th>Persons</th>
-        <th>Served At</th>
-        <th>special Note</th>
-        {/* Lunch columns */}
-        <th>Time</th>
-        <th>Category</th>
-        <th>Menu</th>
-        <th>Persons</th>
-        <th>Served At</th>
-        <th>special Note</th>
-        {/* Dinner columns */}
-        <th>Time</th>
-        <th>Category</th>
-        <th>Menu</th>
-        <th>Persons</th>
-        <th>Served At</th>
-        <th>special Note</th>
-      </tr>
-    </thead>
-    <tbody>
-      {Object.entries(groupedFood).map(([date, meals]) => (
-        <tr key={date}>
-          <td>{date}</td>
-          
-          {/* Breakfast section */}
-          {meals.Breakfast ? (
-            <>
-              <td>{meals.Breakfast.time}</td>
-              <td>{meals.Breakfast.category}</td>
-              <td>{meals.Breakfast.menu}</td>
-              <td>{meals.Breakfast.count}</td>
-              <td>{meals.Breakfast.servedAt}</td>
-              <td>{meals.Breakfast.note}</td>
-            </>
-          ) : (
-            <td colSpan="6" className="empty-cell">No breakfast</td>
-          )}
-          
-          {/* Lunch section */}
-          {meals.Lunch ? (
-            <>
-              <td>{meals.Lunch.time}</td>
-              <td>{meals.Lunch.category}</td>
-              <td>{meals.Lunch.menu}</td>
-              <td>{meals.Lunch.count}</td>
-              <td>{meals.Lunch.servedAt}</td>
-              <td>{meals.Lunch.note}</td>
-            </>
-          ) : (
-            <td colSpan="6" className="empty-cell">No lunch</td>
-          )}
-          
-          {/* Dinner section */}
-          {meals.Dinner ? (
-            <>
-              <td>{meals.Dinner.time}</td>
-              <td>{meals.Dinner.category}</td>
-              <td>{meals.Dinner.menu}</td>
-              <td>{meals.Dinner.count}</td>
-              <td>{meals.Dinner.servedAt}</td>
-              <td>{meals.Dinner.note}</td>
-            </>
-          ) : (
-            <td colSpan="6" className="empty-cell">No dinner</td>
-          )}
-        </tr>
-      ))}
-      {foodEntries.length === 0 && (
-        <tr>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td> 
-          <td   className="empty-table-message">-</td>
-        </tr>
-      )}
-    </tbody>
-  </table>
-</div>
+          <h4>Meal Schedule</h4>
+          <div className="schedule-container">
+            <table className="schedule-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th colSpan="6">Breakfast</th>
+                  <th colSpan="6">Lunch</th>
+                  <th colSpan="6">Dinner</th>
+                </tr>
+                <tr>
+                  <th>Date</th>
+                  {/* Breakfast columns */}
+                  <th>Time</th>
+                  <th>Category</th>
+                  <th>Menu</th>
+                  <th>Persons</th>
+                  <th>Served At</th>
+                  <th>special Note</th>
+                  {/* Lunch columns */}
+                  <th>Time</th>
+                  <th>Category</th>
+                  <th>Menu</th>
+                  <th>Persons</th>
+                  <th>Served At</th>
+                  <th>special Note</th>
+                  {/* Dinner columns */}
+                  <th>Time</th>
+                  <th>Category</th>
+                  <th>Menu</th>
+                  <th>Persons</th>
+                  <th>Served At</th>
+                  <th>special Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(groupedFood).map(([date, meals]) => (
+                  <tr key={date}>
+                    <td>{date}</td>
+
+                    {/* Breakfast section */}
+                    {meals.Breakfast ? (
+                      <>
+                        <td>{meals.Breakfast.time}</td>
+                        <td>{meals.Breakfast.category}</td>
+                        <td>{meals.Breakfast.menu}</td>
+                        <td>{meals.Breakfast.count}</td>
+                        <td>{meals.Breakfast.servedAt}</td>
+                        <td>{meals.Breakfast.note}</td>
+                      </>
+                    ) : (
+                      <td colSpan="6" className="empty-cell">
+                        No breakfast
+                      </td>
+                    )}
+
+                    {/* Lunch section */}
+                    {meals.Lunch ? (
+                      <>
+                        <td>{meals.Lunch.time}</td>
+                        <td>{meals.Lunch.category}</td>
+                        <td>{meals.Lunch.menu}</td>
+                        <td>{meals.Lunch.count}</td>
+                        <td>{meals.Lunch.servedAt}</td>
+                        <td>{meals.Lunch.note}</td>
+                      </>
+                    ) : (
+                      <td colSpan="6" className="empty-cell">
+                        No lunch
+                      </td>
+                    )}
+
+                    {/* Dinner section */}
+                    {meals.Dinner ? (
+                      <>
+                        <td>{meals.Dinner.time}</td>
+                        <td>{meals.Dinner.category}</td>
+                        <td>{meals.Dinner.menu}</td>
+                        <td>{meals.Dinner.count}</td>
+                        <td>{meals.Dinner.servedAt}</td>
+                        <td>{meals.Dinner.note}</td>
+                      </>
+                    ) : (
+                      <td colSpan="6" className="empty-cell">
+                        No dinner
+                      </td>
+                    )}
+                  </tr>
+                ))}
+                {foodEntries.length === 0 && (
+                  <tr>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+            {/* <div className="submit-button-container">
+              <button>Save</button>
+            </div> */}
+          </div>
         </div>
         <div className="section-container">
           <h3>Refreshment Arrangements</h3>
-          <p>Please provide your refreshment details by selecting the date, session, items included, number of persons, and serving location</p>
-          
+          <p>
+            Please provide your refreshment details by selecting the date,
+            session, items included, number of persons, and serving location
+          </p>
+
           {/* Refreshment Input Form */}
           <div className="input-table-container">
             <table className="input-table">
@@ -418,23 +437,23 @@ const FoodTravelForm = () => {
               <tbody>
                 <tr>
                   <td>
-                    <input 
-                      type="date" 
+                    <input
+                      type="date"
                       name="date"
                       value={refreshmentForm.date}
                       onChange={handleRefreshmentInputChange}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="time" 
+                    <input
+                      type="time"
                       name="time"
                       value={refreshmentForm.time}
                       onChange={handleRefreshmentInputChange}
                     />
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="session"
                       value={refreshmentForm.session}
                       onChange={handleRefreshmentInputChange}
@@ -444,7 +463,7 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="category"
                       value={refreshmentForm.category}
                       onChange={handleRefreshmentInputChange}
@@ -461,12 +480,14 @@ const FoodTravelForm = () => {
                       onChange={handleRefreshmentInputChange}
                     >
                       <option value="Only Tea/Coffee">Only Tea/Coffee</option>
-                      <option value="Tea/Coffee with Snacks">Tea/Coffee with Snacks</option>
+                      <option value="Tea/Coffee with Snacks">
+                        Tea/Coffee with Snacks
+                      </option>
                     </select>
                   </td>
                   <td>
-                    <input 
-                      type="number" 
+                    <input
+                      type="number"
                       placeholder="Count"
                       name="count"
                       value={refreshmentForm.count}
@@ -474,7 +495,7 @@ const FoodTravelForm = () => {
                     />
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="servedAt"
                       value={refreshmentForm.servedAt}
                       onChange={handleRefreshmentInputChange}
@@ -484,8 +505,8 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       placeholder="Note"
                       name="note"
                       value={refreshmentForm.note}
@@ -539,7 +560,9 @@ const FoodTravelForm = () => {
                         <td>{sessions.Forenoon.servedAt}</td>
                       </>
                     ) : (
-                      <td colSpan="5" className="empty-cell">No forenoon session</td>
+                      <td colSpan="5" className="empty-cell">
+                        No forenoon session
+                      </td>
                     )}
                     {sessions.Afternoon ? (
                       <>
@@ -550,33 +573,38 @@ const FoodTravelForm = () => {
                         <td>{sessions.Afternoon.servedAt}</td>
                       </>
                     ) : (
-                      <td colSpan="5" className="empty-cell">No afternoon session</td>
+                      <td colSpan="5" className="empty-cell">
+                        No afternoon session
+                      </td>
                     )}
                   </tr>
                 ))}
                 {refreshmentEntries.length === 0 && (
                   <tr>
-                    <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td> 
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
                   </tr>
                 )}
               </tbody>
             </table>
+            {/* <div className="submit-button-container">
+              <button>Save</button>
+            </div> */}
           </div>
         </div>
         {/* Travel Arrangements Section */}
         <div className="section-container">
           <h3>Travel Arrangements</h3>
-          
+
           {/* Travel Input Form */}
           <div className="input-table-container">
             <table className="input-table">
@@ -595,7 +623,7 @@ const FoodTravelForm = () => {
               <tbody>
                 <tr>
                   <td>
-                    <select 
+                    <select
                       name="category"
                       value={travelForm.category}
                       onChange={handleTravelInputChange}
@@ -605,7 +633,7 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <select 
+                    <select
                       name="mode"
                       value={travelForm.mode}
                       onChange={handleTravelInputChange}
@@ -617,24 +645,24 @@ const FoodTravelForm = () => {
                     </select>
                   </td>
                   <td>
-                    <input 
-                      type="date" 
+                    <input
+                      type="date"
                       name="date"
                       value={travelForm.date}
                       onChange={handleTravelInputChange}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="time" 
+                    <input
+                      type="time"
                       name="time"
                       value={travelForm.time}
                       onChange={handleTravelInputChange}
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="pickup"
                       value={travelForm.pickup}
                       onChange={handleTravelInputChange}
@@ -642,8 +670,8 @@ const FoodTravelForm = () => {
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="drop"
                       value={travelForm.drop}
                       onChange={handleTravelInputChange}
@@ -651,8 +679,8 @@ const FoodTravelForm = () => {
                     />
                   </td>
                   <td>
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       name="remarks"
                       value={travelForm.remarks}
                       onChange={handleTravelInputChange}
@@ -667,6 +695,7 @@ const FoodTravelForm = () => {
                 </tr>
               </tbody>
             </table>
+            
           </div>
 
           {/* Travel Schedule Display */}
@@ -698,13 +727,13 @@ const FoodTravelForm = () => {
                 ))}
                 {travelEntries.length === 0 && (
                   <tr>
-                    <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
-          <td   className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
+                    <td className="empty-table-message">-</td>
                   </tr>
                 )}
               </tbody>
@@ -712,11 +741,11 @@ const FoodTravelForm = () => {
           </div>
         </div>
 
-        <div className="submit-container">
-          <button className="submit-btn" onClick={handleSubmit}>
-            Submit All Arrangements
+        
+          <button className="submit-btn-fa" >
+            Save
           </button>
-        </div>
+        
       </div>
     </>
   );
