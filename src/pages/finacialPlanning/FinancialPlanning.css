@@ -14,7 +14,7 @@
 }
 
 .financial-planning h1 {
-  color: #000000;
+  color: #1c366a;
   font-weight: bold;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -22,7 +22,7 @@
 }
 
 .financial-planning h2 {
-  color: #000000;
+  color: #3c2a5a;
   font-weight: bold;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -75,8 +75,11 @@
   color: white;
   border: none;
   cursor: pointer;
+  position: relative;
+  left: 3%;
+  
 }
 
 .submit-button-container button:hover {
-  background-color: #4c85b3;
+  background-color: #315069;
 }
