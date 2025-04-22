@@ -164,7 +164,7 @@ const FinancialPlanning = () => {
       </table>
 
       <div className="submit-button-container">
-        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={handleSubmit}>Save</button>
       </div>
     </div>
   );
