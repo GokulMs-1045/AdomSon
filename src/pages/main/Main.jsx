@@ -18,7 +18,7 @@ const EventForm = () => {
 
   return (
     <form className="event-form">
-      <h2 className="section-title">Event Details & Scheduling</h2>
+      <h2 className="event-section-title">Event Details & Scheduling</h2>
 
       {/* Row 1 */}
       <div className="form-row">
@@ -213,7 +213,7 @@ const EventForm = () => {
       </div>
 
       <hr />
-      <h2 className="section-title">Speaker & Participant Details</h2>
+      <h2 className="event-section-title">Speaker & Participant Details</h2>
       <h3 className="subsection-title">Speaker Details</h3>
 
       {/* Speaker Details */}
