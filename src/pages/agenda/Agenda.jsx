@@ -306,7 +306,7 @@ const Agenda = () => {
             ))}
           </tbody>
         </table>
-        <button type="submit" className="view-btn-save">
+        <button type="submit" className="view-btn-save-1">
               {editingId ? "Save Edit" : "Submit"}
             </button>
       </div>
