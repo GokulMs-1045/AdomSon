@@ -20,6 +20,13 @@
   font-size: 22px;
 }
 
+.logo {
+  height: 83px;
+  width: auto;
+  cursor: pointer;
+}
+
+
 .navbar-center {
   display: flex;
   align-items: center;
