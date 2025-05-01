@@ -1,9 +1,12 @@
+body {
+  overflow: hidden;
+}
 .signup-container{
     overflow: hidden; 
-    height: 100vh; /* Completely removes scrollbars */
+    height: 100%; /* Completely removes scrollbars */
+    overflow: hidden;
   }
-  
-  body {
+  /* body {
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,16 +16,18 @@
     background: #f7f7f7;
     font-family: Arial, sans-serif;
   }
-  
+   */
   .signup-container {
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 1480px;
+    width: 130%;
     height: 95vh;
     background: white;
     border-radius: 10px;
     padding: 20px;
+    transform: translateX(-160px);
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
