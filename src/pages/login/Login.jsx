@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import "./SignUp.css";
+import "./login.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { FiEye } from "react-icons/fi";
 
-const SignUp = () => {
+const login = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
 
     const userData = {
       email,
@@ -95,4 +97,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default login;
